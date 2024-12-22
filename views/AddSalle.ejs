@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Salle</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <%- include('./NavAdmin.ejs') %>
+
+  <div class="container">
+    <h2 class="text-center mt-5 mb-4">Add Salle</h2>
+    <div class="row justify-content-center">
+      <div class="col-lg-6">
+        <form action="/salle/create/<%=tokenData%>" method="POST" >
+          <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" id="name" name="name" required>
+          </div>
+          <div class="mb-3">
+            <label for="capacity" class="form-label">Capacity</label>
+            <input type="number" class="form-control" id="capacity" name="capacity" required>
+          </div>
+          <div class="mb-3">
+            <label for="equipments" class="form-label">Equipments</label>
+            <input type="text" class="form-control" id="equipments" name="equipments" placeholder="Separate each equipment by comma" required>
+          </div>
+          <div class="mb-3">
+            <label for="location" class="form-label">Location</label>
+            <input type="text" class="form-control" id="location" name="location" required>
+          </div>
+          <div class="row">
+            <div class="col">
+              <label for="start-time" class="form-label">Start Time</label>
+              <input type="time" class="form-control" id="start-time" name="starttime" required>
+            </div>
+            <div class="col">
+              <label for="end-time" class="form-label">End Time</label>
+              <input type="time" class="form-control" id="end-time" name="endtime"  required>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="price" class="form-label">Price</label>
+            <input type="number" class="form-control" id="price" name="price" required>
+          </div>
+          <button type="submit" class="btn btn-primary">Add Salle</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap Bundle JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js">
+</script>
+</body>
+</html>
